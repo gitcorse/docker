@@ -15,4 +15,12 @@ docker run -it -d -p 8000:8000 flask_server
 docker volume create <volume name>
 docker run -it -d --name <container name> -v <volume name>:<where this volume will mount in container> <img name>
 ``` 
+## 3. mysql
+### 1- start mysql container
+
+![star_mysql](mysql/1.PNG)
+
+### 2- interact with container cli
+
+![inter_mysql](mysql/2.PNG)
 
