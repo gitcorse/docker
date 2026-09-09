@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn AWS and Docker</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 40px;
+      font-size: 3em;
+      text-transform: uppercase;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6; }
+      to { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; }
+    }
+    section {
+      background: rgba(255,255,255,0.1);
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+    section:nth-child(2) { animation-delay: 0.5s; }
+    section:nth-child(3) { animation-delay: 1s; }
+    section:nth-child(4) { animation-delay: 1.5s; }
+    section:nth-child(5) { animation-delay: 2s; }
+    @keyframes fadeInUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 15px 0;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+    img:hover { transform: scale(1.05); }
+    ul { text-align: left; }
+  </style>
+</head>
+<body>
+  <header>Learn AWS and Docker</header>
+
+  <section>
+    <h2>Step 1: Master Docker</h2>
+    <p>Docker is the foundation of containerization. To become professional:</p>
+    <ul>
+      <li>Learn Docker CLI commands (`docker run`, `docker ps`, `docker logs`).</li>
+      <li>Understand images, containers, and volumes.</li>
+      <li>Write Dockerfiles for custom applications.</li>
+      <li>Use Docker Compose for multi-container setups.</li>
+      <li>Practice building and pushing images to Docker Hub.</li>
+    </ul>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.png" alt="Docker Logo">
+  </section>
+
+  <section>
+    <h2>Step 2: AWS Fundamentals</h2>
+    <p>To become professional in AWS:</p>
+    <ul>
+      <li>Start with EC2 (virtual servers) and S3 (storage).</li>
+      <li>Learn IAM (Identity & Access Management) for security.</li>
+      <li>Understand VPC networking basics.</li>
+      <li>Get hands-on with the AWS Free Tier.</li>
+      <li>Prepare for AWS Certified Solutions Architect Associate exam.</li>
+    </ul>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo">
+  </section>
+
+  <section>
+    <h2>Step 3: Deploy Containers</h2>
+    <p>Running Dockerized apps on AWS:</p>
+    <ul>
+      <li>Deploy containers on EC2 using Docker Engine.</li>
+      <li>Learn AWS ECS (Elastic Container Service).</li>
+      <li>Understand ECR (Elastic Container Registry) for storing images.</li>
+      <li>Automate deployments with CI/CD pipelines.</li>
+      <li>Practice with sample apps and microservices.</li>
+    </ul>
+    <img src="https://cdn-icons-png.flaticon.com/512/919/919853.png" alt="Deployment Illustration">
+  </section>
+
+  <section>
+    <h2>Step 4: Scale & Automate</h2>
+    <p>To become professional in scaling:</p>
+    <ul>
+      <li>Use ECS and EKS (Kubernetes on AWS) for orchestration.</li>
+      <li>Automate infrastructure with CloudFormation or Terraform.</li>
+      <li>Implement monitoring with CloudWatch and Prometheus.</li>
+      <li>Learn autoscaling groups and load balancing.</li>
+      <li>Design resilient architectures for production workloads.</li>
+    </ul>
+    <img src="https://cdn-icons-png.flaticon.com/512/414/414974.png" alt="Cloud Illustration">
+  </section>
+</body>
+</html>
