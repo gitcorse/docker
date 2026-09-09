@@ -24,3 +24,9 @@ docker run -it -d --name <container name> -v <volume name>:<where this volume wi
 
 ![inter_mysql](mysql/2.PNG)
 
+## 4. run sql with volume to save data after deleting container
+
+```sh
+docker run -it -d --name mysql-container -p 3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password mysql
+```
+
