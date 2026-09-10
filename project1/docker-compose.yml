@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  # ----------------------------------------------------
+  # 1. MySQL Database Container (Command #2)
+  # ----------------------------------------------------
+  mysql-server:
+    image: mysql:latest
+    container_name: mysql-server
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mydb
+    volumes:
+      - database:/var/lib/mysql
+    networks:
+      - mynet
+
+  # ----------------------------------------------------
+  # 2. Python Flask Web App (Command #3)
+  # ----------------------------------------------------
+  web1_app:
+    build:
+      context: ./python-app
+      dockerfile: Dockerfile
+    image: web_app_img
+    container_name: web_app_container
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql-server
+    networks:
+      - mynet
+
+  # ----------------------------------------------------
+  # 3. Apache PHP Web App (Command #1)
+  # ----------------------------------------------------
+  web2_app:
+    image: php:8.2-apache
+    container_name: web2_app_container
+    restart: always
+    ports:
+      - "8080:80"
+    command: sh -c "docker-php-ext-install mysqli && apache2-foreground"
+    volumes:
+      - ./web2-app:/var/www/html
+    depends_on:
+      - mysql-server
+    networks:
+      - mynet
+
+# ----------------------------------------------------
+# Named Volumes (Replaces -v database:/var/lib/mysql)
+# ----------------------------------------------------
+volumes:
+  database:
+
+# ----------------------------------------------------
+# Shared Network (Replaces --network mynet)
+# ----------------------------------------------------
+networks:
+  mynet:
+    driver: bridge
